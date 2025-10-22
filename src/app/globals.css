@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%236200ff' fill-opacity='0.4'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+
+  }
+.stripes {
+  background-color: #d6dd70;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='1' viewBox='0 0 40 1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v1H0z' fill='%2364986a' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.pixel-border {
+  box-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    2px 2px 0 black, inset 2px 2px 0 rgb(255, 255, 255),
+    inset 2px -2px 0 rgb(132, 130, 130), inset -2px 2px 0 rgb(132, 130, 130);
+}
+
+.pixel-text {
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    2px 2px 0 black;
+}
+
+.old-scrollbar::-webkit-scrollbar {
+  width: 16px;
+}
+
+.old-scrollbar::-webkit-scrollbar-track {
+  background: #c0c0c0;
+  border-left: 2px solid #a0a0a0;
+  border-top: 2px solid #a0a0a0;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+}
+
+.old-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #c6c6c6, #8e8d8d);
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+/* Handle on hover */
+.old-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #9b9a9a, #777777);
+}
+
+.bounce {
+  animation: bounce 1s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.confetti {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  border-radius: 100%;
+  animation: 700ms fall ease-in-out;
+  opacity: 0;
+  z-index: 100;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
